@@ -45,7 +45,7 @@
   </head>
   <body>
     <h1> Hurrayyyyyyyyy! We have deployed the application successfully. </h1>
-    <h2> Deployed By: @iamsaikishore </h2>
+    <h2> Deployed By: SQUAD1(Aman,Sahana,Ashutosh,Aditi,Nikitha) </h2>
 
     <br>
     <br>
