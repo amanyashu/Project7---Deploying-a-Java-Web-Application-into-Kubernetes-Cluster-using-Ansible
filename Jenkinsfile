@@ -89,19 +89,7 @@ pipeline {
         }
       }
     }
-    stage ('Deploy') {
-                              steps {
-                                                         echo "deploy stage"
-                                                          deploy adapters: [tomcat9 (
-                                                                                                 credentialsId: 'Tomcat_deploy',
-                                                                                                  path: '',
-                                                                                                   url: 'http://40.112.143.191/:8088/'
-                                                                                                  )],
-                                                                                                  contextPath: 'test',
-                                                                                                   onFailure: 'false',
-                                                                                                      war: '**/*.war'
-                              }
-    }
+  
    
     }
   }
