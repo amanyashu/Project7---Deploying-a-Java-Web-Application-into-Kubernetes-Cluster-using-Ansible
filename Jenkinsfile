@@ -5,7 +5,7 @@ pipeline {
     stage('Checkout') {
       steps {
         sh 'echo passed'
-        git branch: 'master', url: 'https://github.com/amanyashu/Project7---Deploying-a-Java-Web-Application-into-Kubernetes-Cluster-using-Ansible.git'
+        git branch: 'main', url: 'https://github.com/amanyashu/Project7---Deploying-a-Java-Web-Application-into-Kubernetes-Cluster-using-Ansible.git'
       }
     }
     stage('Build and Test') {
