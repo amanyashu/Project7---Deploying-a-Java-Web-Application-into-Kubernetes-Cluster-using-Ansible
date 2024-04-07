@@ -45,12 +45,12 @@
   </head>
   <body>
     <h1> Hurrayyyyyyyyy! We have deployed the application successfully. </h1>
-    <h2> Deployed By: @iamsaikishore </h2>
+    <h2> Deployed By: (Aman,Sahana,Aditi,Ashutosh,Nikitha) </h2>
 
     <br>
     <br>
     <h2> App Status  : Up & Running !!! </h2>
-    <h2> Image       : iamsaikishore/IMAGE_NAME </h2>
+    <h2> Image       : sahanasonu272/amanimage </h2>
     <h2> Hostname    : <span id="hostname"></span> </h2>
     <br>
     <div class="color-box blue"></div>
