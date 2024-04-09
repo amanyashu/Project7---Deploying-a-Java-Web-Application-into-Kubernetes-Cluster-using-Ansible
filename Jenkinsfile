@@ -28,52 +28,7 @@ pipeline {
       }
     }
    
-    //stage('Stop') {
-     // steps {
-       // sh 'cd spring-boot-app && java -jar target/spring-boot-web.jar'
-        //sh 'echo $! > pid.txt'
-        //sh 'curl -X POST http://52.167.200.192:9999/actuator/shutdown'
-        //sh 'rm pid.txt'
-      //}
-  //}
-//stage ('Deploy') {
-    
-   // steps {
-      //  echo "deploy stage"
-        //sh "curl -X POST -u \${manager}:\${manager_password} http://52.167.200.192:8088/manager/text/deploy?path=/test&war=file:./target/*.jar"
-    //    sh "curl -X POST -u manager:manager_password http://52.167.200.192:8088/manager/text/deploy?path=/test&war=file:./target/*.jar"
-  //  }
-//}
-//stage ('Deploy') {
-
-        //steps {
-      //      echo "deploy stage"
-            //sh "curl -X POST -u manager:manager_password http://52.167.200.192:8088/manager/text/deploy?path=/test&war=:**/*.war"
-            //deploy adapters: [tomcat9 (
-              //      credentialsId: 'tomcat_deploy_credentials',
-                //    path: '',
-                  //  url: 'http://http://40.112.138.47:8088/'
-                //)],
-                //contextPath: 'test',
-                //onFailure: 'false',
-                //war: '**/*.war'
-        //}
-    //}
-
-//stage('Deploy to Tomcat') {
-  //          steps {
-    //            script {
-      //              def tomcatUrl = 'http://52.167.200.192:8088'
-        //            def credentialsId = 'tomcat_deploy_credentials'
-          //          def contextPath = '/myapp' // Adjust as needed
-            //        sh 'cd spring-boot-app && sudo cp target/spring-boot-app.war /opt/tomcat/latest/webapps/'
-                    //def warFile = sh(script: 'ls spring-boot-app/target/*.jar', returnStdout: true).trim()
-                    //def deployCmd = "curl -u war-deployer:jenkins-tomcat-deploy -T ${warFile} ${tomcatUrl}/manager/text/deploy?path=${contextPath}"
-
-                    //sh deployCmd
-              //  }
-            //}
-//}
+   }
     stage('Build and Push Docker Image') {
       environment {
        DOCKER_IMAGE = "sahanasonu272/amanimage:${BUILD_NUMBER}"
@@ -89,7 +44,6 @@ pipeline {
         }
       }
     }
-  
    
     }
   }
