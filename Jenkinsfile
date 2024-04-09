@@ -38,11 +38,14 @@ pipeline {
     
     stage('Static Code Analysis') {
       environment {
-        SONAR_URL = "http://40.112.138.150:9000/"
+        SONAR_URL = "http://40.118.241.12:9000/"
       }
       steps {
         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-          sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+          sh 'mvn clean verify sonar:sonar \
+  -Dsonar.projectKey=MavenProject \
+  -Dsonar.host.url=http://40.118.241.12:9000 \
+  -Dsonar.login=sqp_8fd644a1f2be73344320e296e1d3884c05c5b3e4'
         }
       }
     }
