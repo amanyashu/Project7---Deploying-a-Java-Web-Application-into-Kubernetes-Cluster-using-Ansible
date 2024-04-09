@@ -48,5 +48,11 @@ pipeline {
                 }
             }
         }
+        stage('Deploy on tomcat') {
+            steps {
+                sh 'echo "Deploying on tomcat"'
+            }
+        }
     }
 }
+
