@@ -28,7 +28,6 @@ pipeline {
       }
     }
    
-   }
      stage('Build and Push Docker Image') {
             environment {
                 DOCKER_IMAGE = "sahanasonu272/amanimage:${BUILD_NUMBER}"
