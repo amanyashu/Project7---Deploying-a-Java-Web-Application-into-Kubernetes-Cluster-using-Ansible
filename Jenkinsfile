@@ -17,18 +17,7 @@ pipeline {
        // sh 'echo $! > pid.txt'
       }
     }
-    stage('Static Code Analysis') {
-      environment {
-        SONAR_URL = "http://40.112.138.150:9000/"
-      }
-      steps {
-        withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
-          sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
-        }
-      }
-    }
-   
-     stage('Build and Push Docker Image') {
+      stage('Build and Push Docker Image') {
             environment {
                 DOCKER_IMAGE = "sahanasonu272/amanimage:${BUILD_NUMBER}"
                 REGISTRY_CREDENTIALS = credentials('docker-cred')
@@ -45,3 +34,17 @@ pipeline {
         }
     }
 }
+
+    
+    stage('Static Code Analysis') {
+      environment {
+        SONAR_URL = "http://40.112.138.150:9000/"
+      }
+      steps {
+        withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_AUTH_TOKEN')]) {
+          sh 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+        }
+      }
+    }
+   
+   
